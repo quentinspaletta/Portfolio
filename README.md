@@ -14,7 +14,7 @@ La donnée :
 <img width="802" height="259" alt="image" src="https://github.com/user-attachments/assets/bb399709-e13d-44f2-af71-e3dcc6d7bba1" />
 
 J'ai travaillé sur un recensement des licenciements de différentes entreprise (company) dans différents secteurs (industry).
-On peut deja constater que la données comporte des manquements dont on s'occupera plus tard.
+On peut deja constater que la données comporte des manquements dont je m'occuperai plus tard.
 
 
 1. Enlever les doublons
@@ -34,15 +34,15 @@ Je duplique la table initiale pour garder une sauvegarde de la table avant que j
 
 2.Uniformiser la donnée
 
-On commence par la colonne 'company' je commence par utiliser la fonction TRIM qui retire les potentiels espaces avant et après la donnée
+Commençons par la colonne 'company' je commence par utiliser la fonction TRIM qui retire les potentiels espaces avant et après la donnée
 Puis je regarde les différents secteurs 'industry' en utilisant un select DISTINCT.
 
 <img width="114" height="347" alt="image" src="https://github.com/user-attachments/assets/262342a4-5511-4f83-ac86-db6e8024ff51" />
 
-On remarque que certaines entreprises n'ont pas eu de secteur attribué et que certains secteur sont similaires notamment sur la Crypto.
+Je remarque que certaines entreprises n'ont pas eu de secteur attribué et que certains secteur sont similaires notamment sur la Crypto.
 
 Je met alors à jour ma donnée, toujours sur la table dupliquée, et je transforme tout ce qui commence par 'Crypto...' par 'Crypto'
-Pour mes données manquantes on remarque qu'il y a des valeurs NULL et des valeurs blanches, j'uniformise en Null
+Pour mes données manquantes je remarque qu'il y a des valeurs NULL et des valeurs blanches, j'uniformise en Null
 
 Une fois fait je verifie la mise à jour :
 
@@ -54,6 +54,67 @@ Ensuite en regardant la colonne des pays avec un Select distinct, je remarque un
 
 Avec la fonction trim(trailing '.' from country) je met a jour ce défaut.
 
+Passons a la colonne 'date', c'est la colonne qui m'a posé le plus de problèmes.
+
+Déjà je remarque que ma colonne date est de type textuel et que le nom de ma colonne est un objet SQL (DATE)
+
+Donc je dois changer ma date dans le format adéquat. J'utilise alors la fonction str_to_date sur ma date Pour ne pas citer l'objet et j'indique son format.
+
+La date 1/18/2023 Devient alors	2023-01-18
+
+Je modifie le type de ma colonne : 
+
+alter table layoffs_staging2
+modify column `date` DATE;
+
+Ma donnée est uniformisée !
 
 
-Ce premier projet est complet et a developpé mes connaissances sur les principes complexes de SQL comme les Subqueries, CTEs et Window functions.
+Je m'occupe des Null :
+
+Je fais donc une selection distincte sur chacune de mes colonnes pour repérer mes colonnes comportant des valeurs null
+
+Comme vu précedement la colonne 'industry' en contient, je les affiche
+
+<img width="873" height="121" alt="image" src="https://github.com/user-attachments/assets/8ba66403-1ae6-434a-9230-6c4ece49c300" />
+
+Select t1.location,t1.company,t1.industry, t2.location, t2.company, t2.industry
+from layoffs_staging2 t1
+join layoffs_staging2 t2
+	On t1.company = t2.company
+    and t1.location = t2.location
+where (t1.industry is null)
+and t2.industry is not null;
+
+Dans cete requete je recupère ma table jointe avec elle même, où deux même entreprises d'un même endroit ont un secteur null et un secteur connu.
+
+<img width="502" height="122" alt="image" src="https://github.com/user-attachments/assets/e718b23d-2520-49c5-85f9-da4f9b71abd0" />
+
+
+Je remarque avoir des secteur non renseignées que je peut déduire. Le Airbnb de San Francisco est certainement dans le secteur du voyage comme son homologue.
+
+Je met alors à jour ces informations.
+
+Il y a aussi plusieurs manquements de valeurs dans les colonnes liées aux licenciements.
+
+Puisque ce sont des valeur qui nous serviront pour notre analyse je décide de retirer toutes les lignes n'ayant aucune données dans le total de licenciements et le pourcentage du personnel licenciés.
+
+Je commence par une requete SELECT pour m'assurer de ce que je vais retirer avant de le faire
+
+select *
+from layoffs
+where total_laid_off is null
+and percentage_laid_off is null;
+
+
+<img width="831" height="264" alt="image" src="https://github.com/user-attachments/assets/ae3ee8a1-1061-402a-a5ce-53b1dc06ea06" />
+<img width="971" height="12" alt="image" src="https://github.com/user-attachments/assets/af33acf7-ced7-4236-a38e-04b65c2f80ac" />
+
+Je remarque que 362 lignes étaient impertinentes pour mes futures analyses, je les supprime. Me voilà soulagé.
+
+Enfin je supprime la colonne de numérotage créée précédement.
+
+Mes quatres étapes sont terminées j'ai maintenant des données prêtes à l'analyse.
+
+Ce premier projet est complet et a developpé mes connaissances sur les principes complexes de SQL.
+Je suis fier de ce travail.
