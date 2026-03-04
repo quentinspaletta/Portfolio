@@ -1,6 +1,10 @@
 Bonjour,
+
 Bienvenue sur mon Portfolio.
+
 Vous trouverez dans cet espace les projets que j'ai réalisé autour de l'analyse de données avec différents outils.
+
+Les données brutes que j'ai utilisé sont repertoriées ici au format CSV.
 
 D'abord un projet de "nettoyage" de données avec SQL en plusieurs étapes
 
@@ -52,7 +56,7 @@ Ensuite en regardant la colonne des pays avec un Select distinct, je remarque un
 
 <img width="147" height="339" alt="image" src="https://github.com/user-attachments/assets/a9c9c8a0-59e5-45c2-b3c4-33589bb5b6d6" />
 
-Avec la fonction trim(trailing '.' from country) je met a jour ce défaut.
+Avec la fonction `trim(trailing '.' from country)` je met a jour ce défaut.
 
 Passons a la colonne 'date', c'est la colonne qui m'a posé le plus de problèmes.
 
@@ -60,12 +64,12 @@ Déjà je remarque que ma colonne date est de type textuel et que le nom de ma c
 
 Donc je dois changer ma date dans le format adéquat. J'utilise alors la fonction str_to_date sur ma date Pour ne pas citer l'objet et j'indique son format.
 
-La date 1/18/2023 Devient alors	2023-01-18
+La date 1/18/2023 devient alors	2023-01-18
 
 Je modifie le type de ma colonne : 
 
-alter table layoffs_staging2
-modify column `date` DATE;
+	alter table layoffs_staging2
+	modify column `date` DATE;
 
 Ma donnée est uniformisée !
 
@@ -78,13 +82,14 @@ Comme vu précedement la colonne 'industry' en contient, je les affiche
 
 <img width="873" height="121" alt="image" src="https://github.com/user-attachments/assets/8ba66403-1ae6-434a-9230-6c4ece49c300" />
 
-Select t1.location,t1.company,t1.industry, t2.location, t2.company, t2.industry
-from layoffs_staging2 t1
-join layoffs_staging2 t2
-	On t1.company = t2.company
-    and t1.location = t2.location
-where (t1.industry is null)
-and t2.industry is not null;
+`Select t1.location,t1.company,t1.industry, t2.location, t2.company, t2.industry
+
+	from layoffs_staging2 t1
+	join layoffs_staging2 t2
+		On t1.company = t2.company
+    	and t1.location = t2.location
+	where (t1.industry is null)
+	and t2.industry is not null;`
 
 Dans cete requete je recupère ma table jointe avec elle même, où deux même entreprises d'un même endroit ont un secteur null et un secteur connu.
 
@@ -101,10 +106,10 @@ Puisque ce sont des valeur qui nous serviront pour notre analyse je décide de r
 
 Je commence par une requete SELECT pour m'assurer de ce que je vais retirer avant de le faire
 
-select *
-from layoffs
-where total_laid_off is null
-and percentage_laid_off is null;
+	select *
+	from layoffs
+	where total_laid_off is null
+	and percentage_laid_off is null;
 
 
 <img width="831" height="264" alt="image" src="https://github.com/user-attachments/assets/ae3ee8a1-1061-402a-a5ce-53b1dc06ea06" />
