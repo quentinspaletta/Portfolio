@@ -10,6 +10,7 @@ D'abord un projet de "nettoyage" de données avec SQL en plusieurs étapes
 4. Enlever les données impertinentes
 
 La donnée : 
+
 <img width="802" height="259" alt="image" src="https://github.com/user-attachments/assets/bb399709-e13d-44f2-af71-e3dcc6d7bba1" />
 
 J'ai travaillé sur un recensement des licenciements de différentes entreprise (company) dans différents secteurs (industry).
@@ -17,6 +18,7 @@ On peut deja constater que la données comporte des manquements dont on s'occupe
 
 
 1. Enlever les doublons
+
 Pour les doublons, j'utilise la fonction row_number pour numéroter toutes les lignes en fonction de la majorité des colonnes.
 Chaque ligne unique aura donc le numéro 1 et tout doublons incrementera ce numéro.
 
@@ -38,8 +40,10 @@ Puis je regarde les différents secteurs 'industry' en utilisant un select DISTI
 <img width="114" height="347" alt="image" src="https://github.com/user-attachments/assets/262342a4-5511-4f83-ac86-db6e8024ff51" />
 
 On remarque que certaines entreprises n'ont pas eu de secteur attribué et que certains secteur sont similaires notamment sur la Crypto.
+
 Je met alors à jour ma donnée, toujours sur la table dupliquée, et je transforme tout ce qui commence par 'Crypto...' par 'Crypto'
 Pour mes données manquantes on remarque qu'il y a des valeurs NULL et des valeurs blanches, j'uniformise en Null
+
 Une fois fait je verifie la mise à jour :
 
 <img width="111" height="337" alt="image" src="https://github.com/user-attachments/assets/a0433505-bd69-4b30-9505-be31c2d9bc14" />
