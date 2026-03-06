@@ -20,6 +20,7 @@ La donnée :
 J'ai travaillé sur un recensement des licenciements de différentes entreprise (company) dans différents secteurs (industry).
 On peut deja constater que la données comporte des manquements dont je m'occuperai plus tard.
 
+Vous trouverez le code de mes requêtes dans le document nommé "1.DATA CLEANNING PROJECT.sql"
 
 1. Enlever les doublons
 
@@ -91,7 +92,7 @@ Comme vu précedement la colonne 'industry' en contient, je les affiche
 	where (t1.industry is null)
 	and t2.industry is not null;`
 
-Dans cete requete je recupère ma table jointe avec elle même, où deux même entreprises d'un même endroit ont un secteur null et un secteur connu.
+Dans cete requête je recupère ma table jointe avec elle même, où deux même entreprises d'un même endroit ont un secteur null et un secteur connu.
 
 <img width="502" height="122" alt="image" src="https://github.com/user-attachments/assets/e718b23d-2520-49c5-85f9-da4f9b71abd0" />
 
@@ -104,7 +105,7 @@ Il y a aussi plusieurs manquements de valeurs dans les colonnes liées aux licen
 
 Puisque ce sont des valeur qui nous serviront pour notre analyse je décide de retirer toutes les lignes n'ayant aucune données dans le total de licenciements et le pourcentage du personnel licenciés.
 
-Je commence par une requete SELECT pour m'assurer de ce que je vais retirer avant de le faire
+Je commence par une requête SELECT pour m'assurer de ce que je vais retirer avant de le faire
 
 	select *
 	from layoffs
