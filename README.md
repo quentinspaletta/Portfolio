@@ -4,8 +4,13 @@ Bienvenue sur mon Portfolio.
 
 Vous trouverez dans cet espace les projets que j'ai réalisé autour de l'analyse de données avec différents outils.
 
+Projet 1 : Nettoyage de données en SQL
+
+Projet 2 : Aller de la donnée brute à des visualitions claires et representatives de celle-ci avec Excel et Power BI
+
 Les données brutes que j'ai utilisé sont repertoriées ici au format CSV.
 
+Projet 1 :
 D'abord un projet de "nettoyage" de données avec SQL en plusieurs étapes
 
 1. Enlever les doublons
@@ -124,3 +129,48 @@ Mes quatres étapes sont terminées j'ai maintenant des données prêtes à l'an
 
 Ce premier projet est complet et a developpé mes connaissances sur les principes complexes de SQL.
 Je suis fier de ce travail.
+
+Projet 2 : Un deuxième projet plus complet ou je vais utiliser les outils Excel et Power BI
+
+La donnée represente les ventes d'une boutique axée jeux vidéos. Chaque ligne represente une commande comportant : ID, date d'achat, date de livraison, nom du produit, prix, plateforme d'achat, canal marketing et pays.
+Des ventes étendues sur plus de 2 ans de janvier 2019 à mars 2021 soit prés de 22 000 commandes uniques
+
+Je commence par explorer la donnée et regarder les potentielles erreurs ou incohérences qu'elle contient et je les note dans une feuille dédié
+
+<img width="1317" height="229" alt="image" src="https://github.com/user-attachments/assets/ab7827a1-a4cd-4811-8d2f-05fa081282b8" />
+
+J'ai donc uniformiser les nom des produits et les dates avec des fonctions SI et DATE, JOUR, MOIS, ANNEE 
+Pour les region, j'ai utiliser la fonction RECHERCHEX pour recuperer la region associé au pays
+Pour les doublons j'ai simplement utiliser un tableau croisé dynamique
+
+Une fois la donnée propre, j'ai commencé à faire un premier tableau croisé dynamique avec une mise en forme conditionnelle pour commencer mon analyse.
+
+<img width="1450" height="597" alt="image" src="https://github.com/user-attachments/assets/39e97be3-fcd9-498e-ae66-5a59a8a0cb65" />
+
+Je tire de ce tableau mes premiers apercus
+
+<img width="1547" height="155" alt="image" src="https://github.com/user-attachments/assets/6e1b6711-832e-40a0-a39b-0805c84f8367" />
+
+Effectivement on remarque que certains produits sont plus performants que d'autres et que certains moment de l'année (Rentrée des classe, Noël) sont particulièrement performants aussi.
+
+Voyons ca de plus près avec Power BI :
+
+<img width="1301" height="652" alt="image" src="https://github.com/user-attachments/assets/c4c6d72b-06bf-4c0c-9b21-f536db6615b0" />
+
+Si on regarde le nombre de commande au fil du temps, on se rend bien compte de la domination des mois de septembre et decembre.
+
+On remarque aussi un nette amélioration des ventes entre 2019 et 2020.
+Le produit "Playstation 5" est le facteur principale de cette fulgurance avec un nombre de commande et un revenue total multiplié par 5 entre janvier 2020 et mars 2020
+
+<img width="831" height="376" alt="image" src="https://github.com/user-attachments/assets/a6d83947-98ba-4779-932d-41bff65acc6a" />
+
+Il serait bon de regarder plus en profondeur avec l'èquipe marketing pour avoir le detail des promotions ou publicités faites pendant cette période.
+
+La gamme des periphériques ne fonctionnent pas du tout en témoigne ce graphique représentant la part de chaque produit sur le revenue total :
+
+<img width="853" height="633" alt="image" src="https://github.com/user-attachments/assets/44cd6283-c4de-4151-9ea7-b6739a18e2db" />
+
+On peut se demander ce qui justifie ces resultats. Il faut revoir les produits en eux même ou la communication et le marketing autour.
+En conclusion il pourrait être interessant d'appuyé la publicité et les efforts marketing autours des mois de septembre et décembre et agir sur les produits qui ne sont pas assez performants en changeant la méthode marketing ou en modifiant le produit.
+
+
