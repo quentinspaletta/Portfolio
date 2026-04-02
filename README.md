@@ -175,7 +175,6 @@ En conclusion il pourrait être interessant d'appuyé la publicité et les effor
 On peut aussi pousser cette analyse en utilisant les dimensions démographiques comme les pays ou region pour plus de précision.
 Pour finir un apercu du tableau de bord final :
 
-<img width="1310" height="730" alt="image" src="https://github.com/user-attachments/assets/382c62be-7716-4e49-9c32-6c96f96cdc5a" />
-
+<img width="1315" height="736" alt="image" src="https://github.com/user-attachments/assets/4e91d4e3-d3f1-4c95-a8f1-abf5540afc72" />
 
 
