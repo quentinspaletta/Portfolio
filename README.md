@@ -160,6 +160,7 @@ Voyons ca de plus près avec Power BI :
 Si on regarde le nombre de commande au fil du temps, on se rend bien compte de la domination des mois de septembre et decembre.
 
 On remarque aussi un nette amélioration des ventes entre 2019 et 2020.
+
 Le produit "Playstation 5" est le facteur principale de cette fulgurance avec un nombre de commande et un revenue total multiplié par 5 entre janvier 2020 et mars 2020
 
 <img width="831" height="376" alt="image" src="https://github.com/user-attachments/assets/a6d83947-98ba-4779-932d-41bff65acc6a" />
@@ -171,8 +172,11 @@ La gamme des periphériques ne fonctionnent pas du tout en témoigne ce graphiqu
 <img width="853" height="633" alt="image" src="https://github.com/user-attachments/assets/44cd6283-c4de-4151-9ea7-b6739a18e2db" />
 
 On peut se demander ce qui justifie ces resultats. Il faut revoir les produits en eux même ou la communication et le marketing autour.
+
 En conclusion il pourrait être interessant d'appuyé la publicité et les efforts marketing autours des mois de septembre et décembre et agir sur les produits qui ne sont pas assez performants en changeant la méthode marketing ou en modifiant le produit.
+
 On peut aussi pousser cette analyse en utilisant les dimensions démographiques comme les pays ou region pour plus de précision.
+
 Pour finir un apercu du tableau de bord final :
 
 <img width="1315" height="736" alt="image" src="https://github.com/user-attachments/assets/4e91d4e3-d3f1-4c95-a8f1-abf5540afc72" />
