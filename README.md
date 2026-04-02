@@ -172,5 +172,10 @@ La gamme des periphériques ne fonctionnent pas du tout en témoigne ce graphiqu
 
 On peut se demander ce qui justifie ces resultats. Il faut revoir les produits en eux même ou la communication et le marketing autour.
 En conclusion il pourrait être interessant d'appuyé la publicité et les efforts marketing autours des mois de septembre et décembre et agir sur les produits qui ne sont pas assez performants en changeant la méthode marketing ou en modifiant le produit.
+On peut aussi pousser cette analyse en utilisant les dimensions démographiques comme les pays ou region pour plus de précision.
+Pour finir un apercu du tableau de bord final :
+
+<img width="1310" height="730" alt="image" src="https://github.com/user-attachments/assets/382c62be-7716-4e49-9c32-6c96f96cdc5a" />
+
 
 
