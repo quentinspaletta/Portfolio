@@ -6,7 +6,7 @@ Vous trouverez dans cet espace les projets que j'ai réalisé autour de l'analys
 
 Projet 1 : Nettoyage de données en SQL
 
-Projet 2 : Aller de la donnée brute à des visualitions claires et representatives de celle-ci avec Excel et Power BI
+Projet 2 : Cas pratique : Identifier la santé des produits d'une boutique de Jeux videos
 
 Les données brutes que j'ai utilisé sont repertoriées ici au format CSV.
 
@@ -181,4 +181,5 @@ Pour finir un apercu du tableau de bord final :
 
 <img width="1315" height="736" alt="image" src="https://github.com/user-attachments/assets/4e91d4e3-d3f1-4c95-a8f1-abf5540afc72" />
 
+Conclusion : Revoir la strategie autours des peripheriques qui ne sont pas assez attractif. Valoriser les produit dans les periodes de rentrée scolaire et de fin d'année. Developper le marché des consoles en proposant plus de choix
 
